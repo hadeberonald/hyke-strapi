@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_posts",
+  "info": {
+    "singularName": "blog-post",
+    "pluralName": "blog-posts",
+    "displayName": "blog-post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 500,
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "default": "News",
+      "enum": [
+        "Safety",
+        "Economics",
+        "Driver Tips",
+        "Product Updates",
+        "Events",
+        "News"
+      ]
+    },
+    "readTime": {
+      "type": "string"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "blog_posts"
+    }
+  }
+}
