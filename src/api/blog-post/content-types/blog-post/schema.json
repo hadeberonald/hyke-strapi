@@ -18,6 +18,7 @@
     },
     "slug": {
       "type": "uid",
+      "targetField": "title",
       "required": true
     },
     "excerpt": {
