@@ -50,6 +50,16 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "blog_posts"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
